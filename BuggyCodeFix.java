@@ -27,5 +27,5 @@ public class BuggyCode {
 		System.out.println(variance(array));
 
 	}
-
+	
 }
