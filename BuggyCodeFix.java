@@ -2,14 +2,12 @@ import java.util.Arrays;
 
 public class BuggyCode {
 	public static double avg(int[] myArray) {
-		// create a copy of the array to avoid overwriting
-		int[] array = Arrys.copyof(myArray, myArray.length)
-
+		int[] array = Arrays.copyOf(myArray, myArray.length);
 		int x = 0;
 		for (int i = 1; i < array.length; i++) {
 			array[i] += array[i-1];
 		}
-		return array[array.length - 1] / array.length;
+		return (double) array[array.length - 1] / array.length;
 	}
 	
 	public static double variance(int[] array) {
@@ -27,5 +25,5 @@ public class BuggyCode {
 		System.out.println(variance(array));
 
 	}
-
+	
 }
