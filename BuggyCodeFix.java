@@ -3,22 +3,22 @@ import java.util.Arrays;
 public class BuggyCode {
 	public static double avg(int[] myArray) {
 		// create a copy of the array to avoid overwriting
-		int[] array = Arrys.copyof(myArray, myArray.length)
+		int[] array = Arrays.copyOf(myArray, myArray.length);
 
-		int x = 0;
-		for (int i = 1; i < array.length; i++) {
-			array[i] += array[i-1];
+		double sum = 0;
+		for (int i = 0; i < array.length; i++) {
+			sum = sum + array[i];
 		}
-		return array[array.length - 1] / array.length;
+		return sum / array.length;
 	}
 	
 	public static double variance(int[] array) {
-		double stuff = avg(array);
-		int[] array1 = array;
-		for (int i = 0; i < array1.length; i++) {
-			array1[i] = array1[i] * array1[i];
+		double average = avg(array);
+		double vari = 0;
+		for (int i = 0; i < array.length; i++) {
+			vari = vari + Math.pow((average-array[i]),2);
 		}
-		return avg(array) - stuff * stuff;
+		return vari / array.length;
 	}
 
 	public static void main(String[] args) {
