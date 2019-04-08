@@ -1,6 +1,10 @@
+import java.util.Arrays;
 
 public class BuggyCode {
-	public static double avg(int[] array) {
+	public static double avg(int[] myArray) {
+		// create a copy of the array to avoid overwriting
+		int[] array = Arrys.copyof(myArray, myArray.length)
+
 		int x = 0;
 		for (int i = 1; i < array.length; i++) {
 			array[i] += array[i-1];
