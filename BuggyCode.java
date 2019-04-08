@@ -1,13 +1,11 @@
-import java.util.Arrays;
 
 public class BuggyCode {
-	public static double avg(int[] myarray) {
-		int[] array = Arrays.copyOf(myarray, myarray.length);
+	public static double avg(int[] array) {
 		int x = 0;
 		for (int i = 1; i < array.length; i++) {
 			array[i] += array[i-1];
 		}
-		return (double) array[array.length - 1] / array.length;
+		return array[array.length - 1] / array.length;
 	}
 	
 	public static double variance(int[] array) {
@@ -25,6 +23,5 @@ public class BuggyCode {
 		System.out.println(variance(array));
 
 	}
-	
-}
 
+}
